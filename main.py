@@ -9,5 +9,8 @@ def home():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", reload=True, host="0.0.0.0", port=8000)
-    
+    uvicorn.run("main:app",
+                reload=True,                # 코드 변경시 서버로 바로 적용
+                host="0.0.0.0",             # 0.0.0.0 외부 접속 허용
+                port=8000)                  # 서버 포트를 8000번 사용
+                                            #  ㄴ AWS EC2 인바운드 규칙 고려 
